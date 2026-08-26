@@ -1,0 +1,13 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and local tooling files
+.vscode/
+.idea/
+
+# Dependency and build output directories
+node_modules/
+dist/
+build/
