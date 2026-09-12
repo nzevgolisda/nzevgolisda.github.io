@@ -5,6 +5,8 @@ const phrases = ['Math Enthusiast', 'Data Scientist', 'Backend Developer', 'Prob
 let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
 
 function typeEffect() {
+    if (!typedElement) return;
+
     const currentPhrase = phrases[phraseIndex];
     if (isDeleting) {
         typedElement.textContent = currentPhrase.substring(0, charIndex - 1);
@@ -25,4 +27,7 @@ function typeEffect() {
     }
     setTimeout(typeEffect, typingSpeed);
 }
-typeEffect();
+
+if (typedElement) {
+    typeEffect();
+}

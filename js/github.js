@@ -4,6 +4,8 @@ const repoGrid = document.getElementById('repoGrid');
 const GITHUB_USERNAME = 'nzevgolisda';
 
 async function fetchRepos() {
+    if (!repoGrid) return;
+
     try {
         const response = await fetch(
             `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
@@ -13,7 +15,7 @@ async function fetchRepos() {
         renderRepos(repos);
     } catch (error) {
         repoGrid.innerHTML =
-            `<div class="error-msg">⚠️ Could not load repositories. <a href="https://github.com/${GITHUB_USERNAME}" target="_blank">View on GitHub</a></div>`;
+            `<div class="error-msg">⚠️ Could not load repositories. <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>`;
         console.error(error);
     }
 }

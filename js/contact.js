@@ -5,7 +5,7 @@ const formSuccess = document.getElementById('formSuccess');
 const formStatus = document.getElementById('formStatus');
 const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
 
-if (contactForm) {
+if (contactForm && submitButton) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const formData = new FormData(contactForm);
@@ -14,7 +14,9 @@ if (contactForm) {
 
         submitButton.disabled = true;
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Sending...';
-        formStatus.textContent = '';
+        if (formStatus) {
+            formStatus.textContent = '';
+        }
 
         fetch(action, {
             method: 'POST',
@@ -23,16 +25,28 @@ if (contactForm) {
         })
         .then(function(response) {
             if (response.ok) {
-                formSuccess.classList.add('show');
-                formStatus.textContent = '';
+                if (formSuccess) {
+                    formSuccess.classList.add('show');
+                }
+                if (formStatus) {
+                    formStatus.textContent = '';
+                }
                 contactForm.reset();
-                setTimeout(() => formSuccess.classList.remove('show'), 5000);
+                setTimeout(() => {
+                    if (formSuccess) {
+                        formSuccess.classList.remove('show');
+                    }
+                }, 5000);
             } else {
-                formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+                if (formStatus) {
+                    formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+                }
             }
         })
         .catch(() => {
-            formStatus.textContent = 'Network error. Please try again or email me directly.';
+            if (formStatus) {
+                formStatus.textContent = 'Network error. Please try again or email me directly.';
+            }
         })
         .finally(() => {
             submitButton.disabled = false;
