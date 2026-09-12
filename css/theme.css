@@ -108,9 +108,10 @@
 }
 .contribution-graph {
     --cell-gap: 4px;
-    --cell-size: clamp(10px, calc((100cqw - 96px) / 25), 24px);
+    --week-count: 53;
+    --cell-size: clamp(10px, calc((100cqw - (var(--week-count) - 1) * var(--cell-gap)) / var(--week-count)), 24px);
     --grid-height: calc(7 * var(--cell-size) + 6 * var(--cell-gap));
-    --grid-min-width: calc(25 * var(--cell-size) + 24 * var(--cell-gap));
+    --grid-min-width: calc(var(--week-count) * var(--cell-size) + (var(--week-count) - 1) * var(--cell-gap));
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -198,12 +199,11 @@
     grid-column: 2;
     grid-row: 1;
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(var(--week-count), minmax(0, 1fr));
     align-items: start;
     width: 100%;
     height: 18px;
     margin-bottom: 0;
-    transform: translateX(calc(-1 * (var(--cell-size) + var(--cell-gap))));
 }
 .contribution-graph__months span {
     position: static;
@@ -218,7 +218,7 @@
     grid-column: 2;
     grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(25, var(--cell-size));
+    grid-template-columns: repeat(var(--week-count), var(--cell-size));
     grid-template-rows: repeat(7, var(--cell-size));
     column-gap: 0;
     row-gap: var(--cell-gap);
@@ -250,6 +250,7 @@
 .contribution-graph__legend .level-2 { background: #4ecb73; }
 .contribution-graph__grid .level-3,
 .contribution-graph__legend .level-3 { background: #2b9d5a; }
+.contribution-graph__grid .level-4 { background: #167c45; }
 .contribution-graph__legend {
     display: flex;
     align-items: center;

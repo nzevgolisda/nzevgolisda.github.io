@@ -2,6 +2,10 @@
 // Fetch GitHub repos
 const repoGrid = document.getElementById('repoGrid');
 const GITHUB_USERNAME = 'nzevgolisda';
+const contributionGrid = document.getElementById('contributionGrid');
+const contributionMonths = document.getElementById('contributionMonths');
+const contributionTotal = document.getElementById('contributionTotal');
+const contributionYear = document.getElementById('contributionYear');
 const FALLBACK_REPOS = [
     {
         name: 'nzevgolisda.github.io',
@@ -106,4 +110,67 @@ function getLanguageColor(lang) {
     return colors[lang] || '#6b7a93';
 }
 
+async function fetchContributions() {
+    if (!contributionGrid) return;
+
+    try {
+        const response = await fetch(
+            `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`
+        );
+        if (!response.ok) throw new Error('Contribution API error');
+
+        const data = await response.json();
+        if (!Array.isArray(data.contributions) || !data.contributions.length) {
+            throw new Error('Invalid contribution response');
+        }
+
+        renderContributions(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function renderContributions(data) {
+    const contributions = data.contributions;
+    const weeks = Math.ceil(contributions.length / 7);
+    const contributionGraph = contributionGrid.closest('.contribution-graph');
+
+    contributionGrid.innerHTML = contributions.map(function(contribution) {
+        const level = Math.max(0, Math.min(4, Number(contribution.level) || 0));
+        return `<span class="level-${level}" title="${contribution.date}: ${contribution.count} contributions"></span>`;
+    }).join('');
+    if (contributionGraph) {
+        contributionGraph.style.setProperty('--week-count', weeks);
+    }
+
+    if (contributionTotal && data.total && data.total.lastYear !== undefined) {
+        contributionTotal.textContent = `${data.total.lastYear} contributions in the last year`;
+    }
+
+    if (contributionYear) {
+        const lastDate = contributions[contributions.length - 1].date;
+        contributionYear.textContent = new Date(`${lastDate}T00:00:00`).getFullYear();
+    }
+
+    if (contributionMonths) {
+        const months = [];
+        contributions.forEach(function(contribution, index) {
+            const date = new Date(`${contribution.date}T00:00:00`);
+            if (date.getDate() <= 7 && date.getDay() === 0) {
+                months.push({
+                    label: date.toLocaleString('en', { month: 'short' }),
+                    start: Math.floor(index / 7),
+                });
+            }
+        });
+
+        contributionMonths.innerHTML = months.map(function(month, index) {
+            const nextStart = months[index + 1] ? months[index + 1].start : weeks;
+            const span = Math.max(1, nextStart - month.start);
+            return `<span style="grid-column: ${month.start + 1} / span ${span};">${month.label}</span>`;
+        }).join('');
+    }
+}
+
 fetchRepos();
+fetchContributions();
