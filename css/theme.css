@@ -104,11 +104,13 @@
     background: rgba(18, 24, 31, 0.9);
     border-radius: 12px;
     padding: 12px 0 0;
+    container-type: inline-size;
 }
 .contribution-graph {
-    --cell-size: clamp(8px, 0.72vw, 10px);
-    --cell-gap: clamp(2px, 0.28vw, 3px);
-    --grid-width: calc(53 * var(--cell-size) + 52 * var(--cell-gap));
+    --cell-gap: 4px;
+    --cell-size: clamp(10px, calc((100cqw - 96px) / 25), 24px);
+    --grid-height: calc(7 * var(--cell-size) + 6 * var(--cell-gap));
+    --grid-min-width: calc(25 * var(--cell-size) + 24 * var(--cell-gap));
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -166,18 +168,22 @@
 .contribution-graph__body {
     display: grid;
     grid-template-columns: 40px minmax(0, 1fr);
-    gap: 10px 10px;
+    grid-template-rows: 18px var(--grid-height);
+    gap: 0 10px;
     align-items: start;
     padding-top: 2px;
 }
 .contribution-graph__days {
     position: relative;
+    grid-column: 1;
+    grid-row: 2;
     width: 40px;
-    height: calc(var(--cell-size) * 7 + var(--cell-gap) * 6);
+    height: var(--grid-height);
     padding-top: 0;
     font-size: 0.68rem;
     color: rgba(148, 163, 184, 0.8);
     line-height: 1;
+    transform: translateY(calc(var(--cell-size) + var(--cell-gap)));
 }
 .contribution-graph__days span {
     position: absolute;
@@ -186,34 +192,42 @@
     line-height: 1;
 }
 .contribution-graph__days span:nth-child(1) { top: 0; }
-.contribution-graph__days span:nth-child(2) { top: 28px; }
-.contribution-graph__days span:nth-child(3) { top: 58px; }
+.contribution-graph__days span:nth-child(2) { top: calc(2 * (var(--cell-size) + var(--cell-gap))); }
+.contribution-graph__days span:nth-child(3) { top: calc(4 * (var(--cell-size) + var(--cell-gap))); }
 .contribution-graph__months {
-    position: relative;
-    width: var(--grid-width);
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+    width: 100%;
     height: 18px;
     margin-bottom: 0;
-    transform: translateY(0);
+    transform: translateX(calc(-1 * (var(--cell-size) + var(--cell-gap))));
 }
 .contribution-graph__months span {
-    position: absolute;
-    left: calc(var(--offset) * (var(--cell-size) + var(--cell-gap)));
-    width: calc(var(--span) * (var(--cell-size) + var(--cell-gap)));
+    position: static;
+    width: auto;
     font-size: 0.68rem;
     color: rgba(148, 163, 184, 0.75);
     white-space: nowrap;
     line-height: 1;
+    text-align: center;
 }
 .contribution-graph__grid {
     grid-column: 2;
+    grid-row: 2;
     display: grid;
-    grid-template-columns: repeat(53, var(--cell-size));
-    gap: var(--cell-gap);
-    width: var(--grid-width);
-    min-height: calc(var(--cell-size) * 7 + var(--cell-gap) * 6);
+    grid-template-columns: repeat(25, var(--cell-size));
+    grid-template-rows: repeat(7, var(--cell-size));
+    column-gap: 0;
+    row-gap: var(--cell-gap);
+    width: 100%;
+    min-height: var(--grid-height);
     padding: 0 0 0;
-    justify-content: start;
+    justify-content: space-between;
     align-content: start;
+    grid-auto-flow: column;
     max-width: 100%;
     transform: translateY(0);
 }
@@ -282,22 +296,23 @@
     }
     .contribution-graph__body {
         grid-template-columns: 30px minmax(0, 1fr);
+        grid-template-rows: 18px var(--grid-height);
         gap: 8px;
         overflow-x: auto;
     }
     .contribution-graph__days {
         width: 30px;
         font-size: 0.62rem;
-        padding-top: 14px;
+        padding-top: 0;
     }
     .contribution-graph__months {
-        width: var(--grid-width);
-        min-width: var(--grid-width);
+        width: max(100%, var(--grid-min-width));
+        min-width: var(--grid-min-width);
     }
     .contribution-graph__grid {
         grid-column: 2;
-        width: var(--grid-width);
-        min-width: var(--grid-width);
+        width: max(100%, var(--grid-min-width));
+        min-width: var(--grid-min-width);
         overflow-x: visible;
     }
     .contribution-graph__legend {
