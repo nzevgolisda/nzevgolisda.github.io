@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nikos Zevgolis · Data & Backend</title>
+        <meta name="description" content="Portfolio of Nikos Zevgolis — Mathematics graduate, aspiring Data Scientist & Backend Developer." />
+        <meta name="theme-color" content="#0b0d10" />
+        <meta property="og:title" content="Nikos Zevgolis · Data & Backend" />
+        <meta property="og:description" content="Mathematics graduate focused on data science, backend engineering, and elegant solutions." />
+        <meta property="og:type" content="website" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <!-- CSS files -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/theme.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container navbar__inner">
+                <a href="#" class="navbar__logo">Nikos<span>.</span></a>
+                <ul class="navbar__links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact" class="navbar__cta">Contact</a></li>
+                </ul>
+                <div class="navbar__actions">
+                    <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button type="button" class="navbar__hamburger" id="navToggle" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <main id="main-content">
+        <section id="hero" class="hero">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        Available for data &amp; backend projects
+                    </div>
+                    <h1 class="hero__title">
+                        Nikos Zevgolis<br />
+                        <span class="hero__highlight" id="typedText">Math Enthusiast</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Theoretical Mathematics graduate from the University of Crete with 9+ years of tutoring experience.
+                        I combine mathematical reasoning with practical software engineering to turn complex problems into clear, useful solutions.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#projects" class="btn btn--primary">Explore my work</a>
+                        <a href="cv.zevgolis-nikolaos.20260826.pdf" download class="btn btn--secondary">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="hero__socials">
+                        <a href="https://github.com/nzevgolisda" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:nzevgolisda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="code-panel">
+                        <div class="code-panel__topbar">
+                            <div class="code-panel__traffic" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="code-panel__filename">solve.py</span>
+                            <span class="code-panel__status"><span></span> ready</span>
+                        </div>
+                        <div class="code-panel__body">
+                            <div class="code-panel__line">
+                                <span class="code-panel__number">01</span>
+                                <span class="code-panel__keyword">class</span>
+                                <span class="code-panel__class"> InsightEngine</span>:
+                            </div>
+                            <div class="code-panel__line">
+                                <span class="code-panel__number">02</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-panel__keyword">def</span>
+                                <span class="code-panel__function"> solve</span>(<span class="code-panel__param">self, problem</span>):
+                            </div>
+                            <div class="code-panel__line">
+                                <span class="code-panel__number">03</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-panel__keyword">return</span>
+                                <span class="code-panel__function"> build</span>(<span class="code-panel__function">clarify</span>(<span class="code-panel__param">problem</span>))
+                            </div>
+                            <div class="code-panel__line code-panel__line--muted">
+                                <span class="code-panel__number">04</span>
+                            </div>
+                            <div class="code-panel__line code-panel__line--accent">
+                                <span class="code-panel__number">05</span>
+                                <span class="code-panel__comment"># teach clearly, build carefully</span>
+                            </div>
+                        </div>
+                        <div class="code-panel__footer">
+                            <span>deliberate by design</span>
+                            <span>● no shortcuts</span>
+                        </div>
+                    </div>
+                    <div class="code-panel__meta">
+                        <span><i class="fab fa-python" aria-hidden="true"></i> Python 3.12</span>
+                        <span>data / APIs / teaching</span>
+                    </div>
+                    <p class="hero__visual-note">Nikos brings a mathematician's patience to every problem: understand it first, then make the solution work in the real world.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag">About</span>
+                    <h2 class="section__title">Who I am</h2>
+                    <p class="section__subtitle">
+                        I'm a mathematics graduate who enjoys making difficult ideas easier to understand and practical problems easier to solve.
+                        My next step is a career in <strong>data science and backend development</strong>, where careful reasoning can become useful software.
+                    </p>
+                </div>
+                <div class="about__details">
+                    <div class="about__profile">
+                        <p>My background gives me a patient, structured approach to learning and problem solving. After more than nine years of tutoring, I know how to listen closely, explain clearly, and adapt when the first approach is not the right one.</p>
+                        <p>I have worked with Python, JavaScript, SQL, HTML, and data tools through personal and collaborative projects. I am continuing to grow as a developer while building a strong foundation in analytics, APIs, and reliable systems.</p>
+                    </div>
+                    <div class="about__focus">
+                        <div class="about__focus-item">
+                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                            <div><strong>Data &amp; insight</strong><span>Turning structured information into decisions people can use.</span></div>
+                        </div>
+                        <div class="about__focus-item">
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                            <div><strong>Backend foundations</strong><span>Learning to build clear, dependable services and workflows.</span></div>
+                        </div>
+                        <div class="about__focus-item">
+                            <i class="fas fa-comments" aria-hidden="true"></i>
+                            <div><strong>Teaching &amp; communication</strong><span>Explaining complex ideas with patience and precision.</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__signature">
+                    <span class="about__signature-label">Working principle</span>
+                    <p>Make the complex clear, then make the solution useful.</p>
+                    <span class="about__signature-mark">NZ / 2026</span>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card fade-in">
+                        <div class="stat-card__number">9+</div>
+                        <div class="stat-card__label">Years tutoring</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-card__number">BSc</div>
+                        <div class="stat-card__label">Theoretical Mathematics</div>
+                    </div>
+                    <div class="stat-card fade-in">
+                        <div class="stat-card__number">∞</div>
+                        <div class="stat-card__label">Curiosity</div>
+                    </div>
+                </div>
+                <div class="about__meta">
+                    <span><i class="fas fa-calendar-alt"></i> Born 24/11/1992</span>
+                    <span><i class="fas fa-flag"></i> Greek</span>
+                    <span><i class="fas fa-language"></i> English B2 · French A2</span>
+                    <span><i class="fas fa-check-circle"></i> Military fulfilled</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section section--alt">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag">Experience</span>
+                    <h2 class="section__title">Teaching &amp; Mentoring</h2>
+                    <p class="section__subtitle">Over 9 years of private tutoring for university and senior high-school students.</p>
+                </div>
+                <div class="exp-grid">
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-ruler-combined"></i></div>
+                        <h3 class="exp-card__title">Calculus &amp; Analysis</h3>
+                        <p class="exp-card__desc">Differential &amp; Integral Calculus, Real Analysis, sequences and series.</p>
+                    </div>
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-square-root-variable"></i></div>
+                        <h3 class="exp-card__title">Algebra &amp; Logic</h3>
+                        <p class="exp-card__desc">Linear Algebra, Propositional Calculus, Abstract Algebra, Number Theory.</p>
+                    </div>
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="exp-card__title">Probability &amp; Stats</h3>
+                        <p class="exp-card__desc">Probability theory, Statistics, Distributions, Hypothesis testing.</p>
+                    </div>
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-gears"></i></div>
+                        <h3 class="exp-card__title">Differential Equations</h3>
+                        <p class="exp-card__desc">ODE, PDE, applications in physics and engineering.</p>
+                    </div>
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fab fa-python"></i></div>
+                        <h3 class="exp-card__title">Python Programming</h3>
+                        <p class="exp-card__desc">Introduction to programming, data analysis, and scientific computing.</p>
+                    </div>
+                    <div class="exp-card fade-in">
+                        <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-compass-drafting"></i></div>
+                        <h3 class="exp-card__title">Geometry</h3>
+                        <p class="exp-card__desc">Euclidean and analytic geometry, vector spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag">Skills</span>
+                    <h2 class="section__title">Tech Stack</h2>
+                    <p class="section__subtitle">Languages, tools, and platforms I work with.</p>
+                </div>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Power BI</span>
+                    <span class="skill-tag">SSMS</span>
+                    <span class="skill-tag">WSL</span>
+                    <span class="skill-tag">Windows</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Microsoft Office</span>
+                    <span class="skill-tag">Libre Office</span>
+                    <span class="skill-tag">HTML5 / CSS</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section section--alt">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag">Projects</span>
+                    <h2 class="section__title">GitHub Repositories</h2>
+                    <p class="section__subtitle">
+                        Live feed from <a href="https://github.com/nzevgolisda" target="_blank">github.com/nzevgolisda</a>.
+                    </p>
+                </div>
+                <div id="repoGrid" class="projects-grid">
+                    <div class="loading">Loading repositories…</div>
+                </div>
+                <div class="projects__footer">
+                    <a href="https://github.com/nzevgolisda?tab=repositories" target="_blank" class="btn btn--secondary">
+                        <i class="fab fa-github"></i> View all on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__tag">Contact</span>
+                    <h2 class="section__title">Let's connect</h2>
+                    <p class="section__subtitle">
+                        I'm always open to discussing data science, backend engineering, or interesting math problems.
+                    </p>
+                </div>
+                <div class="contact__wrapper">
+                    <form id="contactForm" class="contact__form" action="https://formspree.io/f/xqakjvro" method="POST">
+                        <div class="contact__form-group">
+                            <label>
+                                <span>Your name</span>
+                                <input type="text" name="name" autocomplete="name" placeholder="Alex Morgan" required />
+                            </label>
+                            <label>
+                                <span>Email address</span>
+                                <input type="email" name="email" autocomplete="email" placeholder="alex@example.com" required />
+                            </label>
+                        </div>
+                        <label>
+                            <span>How can I help?</span>
+                            <textarea name="message" placeholder="Tell me a little about your project or question." rows="5" required></textarea>
+                        </label>
+                        <input type="hidden" name="subject" value="New portfolio enquiry" />
+                        <div class="contact__form-actions">
+                            <button type="submit" class="btn btn--primary contact__submit">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Send email request
+                            </button>
+                            <a class="contact__email-link" href="mailto:nzevgolisda@gmail.com?subject=Portfolio%20enquiry">Or email me directly</a>
+                        </div>
+                        <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+                        <div id="formSuccess" class="form-success" role="status" aria-live="polite">
+                            <i class="fas fa-check-circle"></i> Thanks! Your message was sent.
+                        </div>
+                    </form>
+                    <div class="contact__info">
+                        <p class="contact__eyebrow">Start a conversation</p>
+                        <h3>Have a problem worth solving?</h3>
+                        <p class="contact__copy">Whether you are building a data workflow, improving a backend, or need a patient mathematics tutor, I would be glad to hear what you are working on.</p>
+                        <a href="mailto:nzevgolisda@gmail.com"><i class="fas fa-envelope"></i> nzevgolisda@gmail.com</a>
+                        <a href="https://github.com/nzevgolisda" target="_blank"><i class="fab fa-github"></i> @nzevgolisda</a>
+                        <a href="cv.zevgolis-nikolaos.20260826.pdf" download><i class="fas fa-file-pdf"></i> Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container footer__inner">
+                <p>&copy; 2026 Nikos Zevgolis. Built with care and Python.</p>
+            </div>
+        </footer>
+
+        <!-- Scroll to top -->
+        <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- JavaScript modules -->
+        <script src="js/typing.js"></script>
+        <script src="js/nav.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/github.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/scroll.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
