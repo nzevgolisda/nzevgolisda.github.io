@@ -1,4 +1,26 @@
 
+// Mail links: prefer Gmail compose, then fall back to the default mail app.
+const emailLinks = document.querySelectorAll('.mailto-link');
+
+emailLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const email = 'nzevgolisda@gmail.com';
+        const subject = 'Portfolio enquiry';
+        const body = 'Hi Nikos,\n\n';
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        const gmailWindow = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+        if (gmailWindow) {
+            return;
+        }
+
+        window.location.href = mailtoUrl;
+    });
+});
+
 // Contact form
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
