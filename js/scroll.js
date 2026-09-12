@@ -2,22 +2,24 @@
 // Scroll to top button
 const scrollBtn = document.getElementById('scrollTop');
 const navbar = document.getElementById('navbar');
-let previousScrollY = window.scrollY;
+let navbarTimer;
 
 function updateNavbarVisibility() {
     if (!navbar) return;
 
     const currentScrollY = window.scrollY;
-    const scrollingDown = currentScrollY > previousScrollY;
-    const scrollingUp = currentScrollY < previousScrollY;
 
-    if (currentScrollY <= 0 || scrollingUp) {
+    clearTimeout(navbarTimer);
+
+    if (currentScrollY <= 0) {
         navbar.classList.remove('navbar--hidden');
-    } else if (scrollingDown) {
-        navbar.classList.add('navbar--hidden');
+        return;
     }
 
-    previousScrollY = currentScrollY;
+    navbar.classList.add('navbar--hidden');
+    navbarTimer = setTimeout(function() {
+        navbar.classList.remove('navbar--hidden');
+    }, 180);
 }
 
 window.addEventListener('scroll', updateNavbarVisibility, { passive: true });
