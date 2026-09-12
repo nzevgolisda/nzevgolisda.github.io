@@ -57,7 +57,7 @@ sitemap.xml                        Search engine sitemap
 
 ## Notes
 
-The repository feed uses GitHub's unauthenticated public API. GitHub may temporarily rate-limit requests, in which case the profile link remains available.
+The repository feed uses GitHub's unauthenticated public API when available. If GitHub rate-limits the request or the network is unavailable, the page displays a verified fallback list and keeps the profile links available.
 
 The Gmail buttons open a Gmail compose window and fall back to the device's default mail app if Gmail cannot be opened. On very narrow screens below 480px, the navigation bar is hidden to keep the content unobstructed.
 

@@ -2,20 +2,71 @@
 // Fetch GitHub repos
 const repoGrid = document.getElementById('repoGrid');
 const GITHUB_USERNAME = 'nzevgolisda';
+const FALLBACK_REPOS = [
+    {
+        name: 'nzevgolisda.github.io',
+        html_url: 'https://github.com/nzevgolisda/nzevgolisda.github.io',
+        description: 'Personal portfolio website.',
+        language: 'HTML',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+    {
+        name: 'tox.gr-frontend',
+        html_url: 'https://github.com/nzevgolisda/tox.gr-frontend',
+        description: 'Frontend for a social messaging and forum application.',
+        language: 'CSS',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+    {
+        name: 'dev-toolkit',
+        html_url: 'https://github.com/nzevgolisda/dev-toolkit',
+        description: 'Dashboards, engines, visualizers, and utilities for web and data.',
+        language: 'HTML',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+    {
+        name: 'Games',
+        html_url: 'https://github.com/nzevgolisda/Games',
+        description: 'Board games and casual old-school shooters.',
+        language: 'Python',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+    {
+        name: 'science-tools',
+        html_url: 'https://github.com/nzevgolisda/science-tools',
+        description: 'Reusable modules for numerical calculus, simulations, algebra, and geometry.',
+        language: 'Python',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+    {
+        name: 'minesweeper_python',
+        html_url: 'https://github.com/nzevgolisda/minesweeper_python',
+        description: 'A Minesweeper game in Python using Pygame.',
+        language: 'Python',
+        stargazers_count: 1,
+        forks_count: 0,
+    },
+];
 
 async function fetchRepos() {
     if (!repoGrid) return;
 
     try {
         const response = await fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`
+            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`,
+            { headers: { Accept: 'application/vnd.github+json' } }
         );
         if (!response.ok) throw new Error('GitHub API error');
         const repos = await response.json();
+        if (!Array.isArray(repos)) throw new Error('Invalid GitHub API response');
         renderRepos(repos);
     } catch (error) {
-        repoGrid.innerHTML =
-            `<div class="error-msg">⚠️ Could not load repositories. <a href="https://github.com/${GITHUB_USERNAME}" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>`;
+        renderRepos(FALLBACK_REPOS);
         console.error(error);
     }
 }
