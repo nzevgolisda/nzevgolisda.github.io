@@ -53,6 +53,259 @@
     transform: translateY(-2px);
 }
 
+.activity-section {
+    padding-top: 20px;
+}
+.activity-intro {
+    margin: 0;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    line-height: 1.35;
+    color: var(--text);
+    max-width: 900px;
+    font-weight: 400;
+}
+.activity-card {
+    background: rgba(15, 22, 32, 0.94);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 18px;
+    padding: 0 18px 12px;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.04);
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.activity-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 0 12px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+.activity-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.activity-card__label {
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0;
+}
+.activity-card__header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.02em;
+    color: #f5f7fa;
+}
+.activity-calendar {
+    background: rgba(18, 24, 31, 0.9);
+    border-radius: 12px;
+    padding: 12px 0 0;
+}
+.contribution-graph {
+    --cell-size: clamp(8px, 0.72vw, 10px);
+    --cell-gap: clamp(2px, 0.28vw, 3px);
+    --grid-width: calc(53 * var(--cell-size) + 52 * var(--cell-gap));
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(148, 163, 184, 0.9);
+}
+.contribution-graph__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #e5edf9;
+    font-weight: 500;
+    padding: 0 0 6px;
+}
+.contribution-graph__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contribution-graph__actions button {
+    background: rgba(15, 23, 32, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    color: rgba(214, 221, 233, 0.92);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 0.74rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.contribution-graph__actions button:hover {
+    border-color: rgba(148, 163, 184, 0.45);
+    background: rgba(22, 31, 41, 0.9);
+}
+.contribution-graph__actions button:active {
+    transform: translateY(1px);
+}
+.contribution-graph__year {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 74px;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, rgba(91, 144, 255, 0.92), rgba(62, 118, 230, 0.92));
+    border: 1px solid rgba(101, 152, 255, 0.75);
+    border-radius: 6px;
+    color: #f3f7ff;
+    font-weight: 600;
+    font-size: 0.78rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.contribution-graph__body {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 10px 10px;
+    align-items: start;
+    padding-top: 2px;
+}
+.contribution-graph__days {
+    position: relative;
+    width: 40px;
+    height: calc(var(--cell-size) * 7 + var(--cell-gap) * 6);
+    padding-top: 0;
+    font-size: 0.68rem;
+    color: rgba(148, 163, 184, 0.8);
+    line-height: 1;
+}
+.contribution-graph__days span {
+    position: absolute;
+    left: 0;
+    display: block;
+    line-height: 1;
+}
+.contribution-graph__days span:nth-child(1) { top: 0; }
+.contribution-graph__days span:nth-child(2) { top: 28px; }
+.contribution-graph__days span:nth-child(3) { top: 58px; }
+.contribution-graph__months {
+    position: relative;
+    width: var(--grid-width);
+    height: 18px;
+    margin-bottom: 0;
+    transform: translateY(0);
+}
+.contribution-graph__months span {
+    position: absolute;
+    left: calc(var(--offset) * (var(--cell-size) + var(--cell-gap)));
+    width: calc(var(--span) * (var(--cell-size) + var(--cell-gap)));
+    font-size: 0.68rem;
+    color: rgba(148, 163, 184, 0.75);
+    white-space: nowrap;
+    line-height: 1;
+}
+.contribution-graph__grid {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(53, var(--cell-size));
+    gap: var(--cell-gap);
+    width: var(--grid-width);
+    min-height: calc(var(--cell-size) * 7 + var(--cell-gap) * 6);
+    padding: 0 0 0;
+    justify-content: start;
+    align-content: start;
+    max-width: 100%;
+    transform: translateY(0);
+}
+.contribution-graph__grid span,
+.contribution-graph__legend .level-0,
+.contribution-graph__legend .level-1,
+.contribution-graph__legend .level-2,
+.contribution-graph__legend .level-3 {
+    display: block;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 2px;
+    background: rgba(148, 163, 184, 0.2);
+    justify-self: center;
+}
+.contribution-graph__grid .level-0 { background: rgba(148, 163, 184, 0.18); }
+.contribution-graph__grid .level-1,
+.contribution-graph__legend .level-1 { background: #7bd48f; }
+.contribution-graph__grid .level-2,
+.contribution-graph__legend .level-2 { background: #4ecb73; }
+.contribution-graph__grid .level-3,
+.contribution-graph__legend .level-3 { background: #2b9d5a; }
+.contribution-graph__legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 8px;
+    font-size: 0.72rem;
+    color: rgba(148, 163, 184, 0.9);
+}
+.contribution-graph__legend span:not(.level-0):not(.level-1):not(.level-2):not(.level-3) {
+    color: var(--text-secondary);
+}
+.contribution-graph__legend .level-0,
+.contribution-graph__legend .level-1,
+.contribution-graph__legend .level-2,
+.contribution-graph__legend .level-3 {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border-radius: 2px;
+}
+
+@media (max-width: 760px) {
+    .activity-intro {
+        font-size: 1.1rem;
+    }
+    .activity-card {
+        padding: 0 12px 10px;
+    }
+    .activity-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 12px;
+    }
+    .contribution-graph__header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 8px;
+    }
+    .contribution-graph__actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .contribution-graph__body {
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 8px;
+        overflow-x: auto;
+    }
+    .contribution-graph__days {
+        width: 30px;
+        font-size: 0.62rem;
+        padding-top: 14px;
+    }
+    .contribution-graph__months {
+        width: var(--grid-width);
+        min-width: var(--grid-width);
+    }
+    .contribution-graph__grid {
+        grid-column: 2;
+        width: var(--grid-width);
+        min-width: var(--grid-width);
+        overflow-x: visible;
+    }
+    .contribution-graph__legend {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
 /* Projects grid */
 .projects-grid {
     display: grid;

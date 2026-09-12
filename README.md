@@ -14,6 +14,7 @@ This is a responsive static website built with plain HTML, CSS, and JavaScript. 
 - About, experience, skills, projects, and contact sections
 - A live feed of public repositories from the GitHub API
 - A downloadable CV and a Formspree contact form
+- A responsive navigation bar that hides while scrolling down and returns while scrolling up
 - A custom 404 page and sitemap for GitHub Pages
 
 ## Run locally
@@ -57,6 +58,8 @@ sitemap.xml                        Search engine sitemap
 ## Notes
 
 The repository feed uses GitHub's unauthenticated public API. GitHub may temporarily rate-limit requests, in which case the profile link remains available.
+
+The Gmail buttons open a Gmail compose window and fall back to the device's default mail app if Gmail cannot be opened. On very narrow screens below 480px, the navigation bar is hidden to keep the content unobstructed.
 
 ## License
 

@@ -97,3 +97,15 @@ img {
 .skip-link:focus {
     transform: translateY(0);
 }
+
+h1,
+h2,
+h3,
+p,
+li,
+label,
+button,
+a {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
