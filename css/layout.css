@@ -259,7 +259,7 @@
         grid-row: 2;
     }
     .hero__visual {
-        order: -1;
+        order: 0;
     }
     .code-panel {
         max-width: none;
