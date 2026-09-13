@@ -2,6 +2,7 @@
 // Fetch GitHub repos
 const repoGrid = document.getElementById('repoGrid');
 const GITHUB_USERNAME = 'nzevgolisda';
+const CONTRIBUTION_API_URL = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`;
 const contributionGrid = document.getElementById('contributionGrid');
 const contributionMonths = document.getElementById('contributionMonths');
 const contributionTotal = document.getElementById('contributionTotal');
@@ -115,7 +116,7 @@ async function fetchContributions() {
 
     try {
         const response = await fetch(
-            `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`
+            CONTRIBUTION_API_URL
         );
         if (!response.ok) throw new Error('Contribution API error');
 
@@ -126,6 +127,7 @@ async function fetchContributions() {
 
         renderContributions(data);
     } catch (error) {
+        contributionGrid.setAttribute('aria-busy', 'false');
         console.error(error);
     }
 }
@@ -139,6 +141,7 @@ function renderContributions(data) {
         const level = Math.max(0, Math.min(4, Number(contribution.level) || 0));
         return `<span class="level-${level}" title="${contribution.date}: ${contribution.count} contributions"></span>`;
     }).join('');
+    contributionGrid.setAttribute('aria-busy', 'false');
     if (contributionGraph) {
         contributionGraph.style.setProperty('--week-count', weeks);
     }
