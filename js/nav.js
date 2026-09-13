@@ -7,6 +7,7 @@ if (navToggle && navLinks) {
     function closeNavigation() {
         navLinks.classList.remove('open');
         navToggle.classList.remove('open');
+        document.body.classList.remove('nav-menu-open');
         navToggle.setAttribute('aria-expanded', 'false');
         navToggle.setAttribute('aria-label', 'Open navigation');
     }
@@ -14,6 +15,7 @@ if (navToggle && navLinks) {
     navToggle.addEventListener('click', function() {
         const isOpen = navLinks.classList.toggle('open');
         navToggle.classList.toggle('open', isOpen);
+        document.body.classList.toggle('nav-menu-open', isOpen);
         navToggle.setAttribute('aria-expanded', String(isOpen));
         navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     });

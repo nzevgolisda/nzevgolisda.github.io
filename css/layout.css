@@ -66,7 +66,7 @@
     min-height: max(100vh, 640px);
     display: flex;
     align-items: center;
-    padding: calc(var(--nav-height) + 40px) 0 60px;
+    padding: calc(var(--nav-height) + 24px) 0 60px;
     position: relative;
     overflow: hidden;
 }
@@ -237,7 +237,10 @@
         display: flex;
     }
     .hero {
-        padding-top: calc(var(--nav-height) + 56px);
+        padding-top: calc(var(--nav-height) + 28px);
+    }
+    .nav-menu-open .hero {
+        padding-top: calc(var(--nav-height) + 94px);
     }
     .hero__inner,
     .contact__wrapper,
