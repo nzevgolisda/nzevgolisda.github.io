@@ -59,6 +59,26 @@
     border-color: var(--accent);
 }
 
+/* Language toggle */
+.language-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 0;
+    width: 42px;
+    height: 34px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    color: var(--text);
+    transition: all var(--transition);
+}
+.language-toggle:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent);
+}
+
 /* Navbar */
 .navbar {
     position: fixed;

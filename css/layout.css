@@ -129,6 +129,8 @@
     background-clip: text;
     display: inline-block;
     min-width: 160px;
+    min-height: 1.1em;
+    vertical-align: top;
 }
 .hero__subtitle {
     font-size: clamp(1rem, 1.5vw, 1.1rem);

@@ -1,7 +1,11 @@
 
 // Typing effect
 const typedElement = document.getElementById('typedText');
-const phrases = ['Math Enthusiast', 'Data Scientist', 'Backend Developer', 'Problem Solver'];
+const phrasesByLanguage = {
+    en: ['Math Enthusiast', 'Data Scientist', 'Backend Developer', 'Problem Solver'],
+    gr: ['Math Geek', 'Data Science', 'Backend Developer', 'Problem Solver']
+};
+let phrases = phrasesByLanguage.en;
 let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
 
 function typeEffect() {
@@ -30,4 +34,10 @@ function typeEffect() {
 
 if (typedElement) {
     typeEffect();
+    document.addEventListener('languagechange', function(event) {
+        phrases = phrasesByLanguage[event.detail.language] || phrasesByLanguage.en;
+        phraseIndex = 0;
+        charIndex = 0;
+        isDeleting = false;
+    });
 }

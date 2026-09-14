@@ -26,13 +26,16 @@
             <div class="container navbar__inner">
                 <a href="#" class="navbar__logo">Nikos<span>.</span></a>
                 <ul class="navbar__links" id="navLinks">
-                    <li><a href="#about" aria-label="About"><i class="fas fa-user" aria-hidden="true"></i><span class="nav-link__label">About</span></a></li>
-                    <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i><span class="nav-link__label">Experience</span></a></li>
-                    <li><a href="#skills" aria-label="Skills"><i class="fas fa-code" aria-hidden="true"></i><span class="nav-link__label">Skills</span></a></li>
-                    <li><a href="#projects" aria-label="Projects"><i class="fas fa-folder-open" aria-hidden="true"></i><span class="nav-link__label">Projects</span></a></li>
-                    <li><a href="#contact" class="navbar__cta" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span class="nav-link__label">Contact</span></a></li>
+                    <li><a href="#about" aria-label="About"><i class="fas fa-user" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.about">About</span></a></li>
+                    <li><a href="#experience" aria-label="Experience"><i class="fas fa-briefcase" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.experience">Experience</span></a></li>
+                    <li><a href="#skills" aria-label="Skills"><i class="fas fa-code" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.skills">Skills</span></a></li>
+                    <li><a href="#projects" aria-label="Projects"><i class="fas fa-folder-open" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.projects">Projects</span></a></li>
+                    <li><a href="#contact" class="navbar__cta" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.contact">Contact</span></a></li>
                 </ul>
                 <div class="navbar__actions">
+                    <button type="button" id="languageToggle" class="language-toggle" aria-label="Switch to Greek" aria-pressed="false">
+                        <span id="languageToggleLabel">GR</span>
+                    </button>
                     <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -50,22 +53,21 @@
                 <div class="hero__content">
                     <div class="hero__badge">
                         <span class="hero__badge-dot"></span>
-                        
-                        Available for data &amp; backend projects
+                        <span data-i18n="hero.availability">Available for data &amp; backend projects</span>
                     </div>
                     <h1 class="hero__title">
                         
                         Nikos Zevgolis<br />
-                        <span class="hero__highlight" id="typedText">Math Enthusiast</span>
+                        <span class="hero__highlight" id="typedText" data-i18n="hero.title">Math Enthusiast</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Theoretical Mathematics graduate from the University of Crete with 9+ years of tutoring experience.
-                        I combine mathematical reasoning with practical software engineering to turn complex problems into clear, useful solutions.
+                        <span data-i18n="hero.subtitle">Theoretical Mathematics graduate from the University of Crete with 9+ years of tutoring experience.
+                        I combine mathematical reasoning with practical software engineering to turn complex problems into clear, useful solutions.</span>
                     </p>
                     <div class="hero__actions">
-                        <a href="#projects" class="btn btn--primary">Explore my work</a>
+                        <a href="#projects" class="btn btn--primary" data-i18n="hero.explore">Explore my work</a>
                         <a href="cv.zevgolis-nikolaos.20260826.pdf" download class="btn btn--secondary">
-                            <i class="fas fa-download"></i> Download CV
+                            <i class="fas fa-download"></i> <span data-i18n="common.downloadCv">Download CV</span>
                         </a>
                     </div>
                     <div class="hero__socials">
@@ -81,7 +83,7 @@
                                 <span></span><span></span><span></span>
                             </div>
                             <span class="code-panel__filename">solve.py</span>
-                            <span class="code-panel__status"><span></span> ready</span>
+                            <span class="code-panel__status"><span></span> <span data-i18n="hero.ready">ready</span></span>
                         </div>
                         <div class="code-panel__body">
                             <div class="code-panel__line">
@@ -104,17 +106,17 @@
                             </div>
                             <div class="code-panel__line code-panel__line--accent">
                                 <span class="code-panel__number">05</span>
-                                <span class="code-panel__comment"># teach clearly, build carefully</span>
+                                <span class="code-panel__comment" data-i18n="hero.codeComment"># teach clearly, build carefully</span>
                             </div>
                         </div>
                         <div class="code-panel__footer">
-                            <span>deliberate by design</span>
-                            <span>● no shortcuts</span>
+                            <span data-i18n="hero.deliberate">deliberate by design</span>
+                            <span data-i18n="hero.noShortcuts">● no shortcuts</span>
                         </div>
                     </div>
                     <div class="code-panel__meta">
                         <span><i class="fab fa-python" aria-hidden="true"></i> Python 3.12</span>
-                        <span>data / APIs / teaching</span>
+                        <span data-i18n="hero.meta">data / APIs / teaching</span>
                     </div>
                 </div>
             </div>
@@ -124,57 +126,57 @@
         <section id="about" class="section">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__tag">About</span>
-                    <h2 class="section__title">Who I am</h2>
+                    <span class="section__tag" data-i18n="about.tag">About</span>
+                    <h2 class="section__title" data-i18n="about.title">Who I am</h2>
                     <p class="section__subtitle">
-                        I'm a mathematics graduate who enjoys making difficult ideas easier to understand and practical problems easier to solve.
-                        My next step is a career in <strong>data science and backend development</strong>, where careful reasoning can become useful software.
+                        <span data-i18n="about.subtitle">I'm a mathematics graduate who enjoys making difficult ideas easier to understand and practical problems easier to solve.
+                        My next step is a career in <strong>data science and backend development</strong>, where careful reasoning can become useful software.</span>
                     </p>
                 </div>
                 <div class="about__details">
                     <div class="about__profile">
-                        <p>My background gives me a patient, structured approach to learning and problem solving. After more than nine years of tutoring, I know how to listen closely, explain clearly, and adapt when the first approach is not the right one.</p>
-                        <p>I have worked with Python, JavaScript, SQL, HTML, and data tools through personal and collaborative projects. I am continuing to grow as a developer while building a strong foundation in analytics, APIs, and reliable systems.</p>
+                        <p data-i18n="about.profileOne">My background gives me a patient, structured approach to learning and problem solving. After more than nine years of tutoring, I know how to listen closely, explain clearly, and adapt when the first approach is not the right one.</p>
+                        <p data-i18n="about.profileTwo">I have worked with Python, JavaScript, SQL, HTML, and data tools through personal and collaborative projects. I am continuing to grow as a developer while building a strong foundation in analytics, APIs, and reliable systems.</p>
                     </div>
                     <div class="about__focus">
                         <div class="about__focus-item">
                             <i class="fas fa-chart-pie" aria-hidden="true"></i>
-                            <div><strong>Data &amp; insight</strong><span>Turning structured information into decisions people can use.</span></div>
+                            <div><strong data-i18n="about.focusDataTitle">Data &amp; insight</strong><span data-i18n="about.focusDataText">Turning structured information into decisions people can use.</span></div>
                         </div>
                         <div class="about__focus-item">
                             <i class="fas fa-server" aria-hidden="true"></i>
-                            <div><strong>Backend foundations</strong><span>Learning to build clear, dependable services and workflows.</span></div>
+                            <div><strong data-i18n="about.focusBackendTitle">Backend foundations</strong><span data-i18n="about.focusBackendText">Learning to build clear, dependable services and workflows.</span></div>
                         </div>
                         <div class="about__focus-item">
                             <i class="fas fa-comments" aria-hidden="true"></i>
-                            <div><strong>Teaching &amp; communication</strong><span>Explaining complex ideas with patience and precision.</span></div>
+                            <div><strong data-i18n="about.focusTeachingTitle">Teaching &amp; communication</strong><span data-i18n="about.focusTeachingText">Explaining complex ideas with patience and precision.</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="about__signature">
-                    <span class="about__signature-label">Working principle</span>
-                    <p>Make the complex clear, then make the solution useful.</p>
+                    <span class="about__signature-label" data-i18n="about.principleLabel">Working principle</span>
+                    <p data-i18n="about.principle">Make the complex clear, then make the solution useful.</p>
                     <span class="about__signature-mark">NZ / 2026</span>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card fade-in">
                         <div class="stat-card__number">9+</div>
-                        <div class="stat-card__label">Years tutoring</div>
+                        <div class="stat-card__label" data-i18n="stats.tutoring">Years tutoring</div>
                     </div>
                     <div class="stat-card fade-in">
                         <div class="stat-card__number">BSc</div>
-                        <div class="stat-card__label">Theoretical Mathematics</div>
+                        <div class="stat-card__label" data-i18n="stats.degree">Theoretical Mathematics</div>
                     </div>
                     <div class="stat-card fade-in">
                         <div class="stat-card__number">∞</div>
-                        <div class="stat-card__label">Curiosity</div>
+                        <div class="stat-card__label" data-i18n="stats.curiosity">Curiosity</div>
                     </div>
                 </div>
                 <div class="about__meta">
                     <span><i class="fas fa-calendar-alt"></i> Born 24/11/1992</span>
-                    <span><i class="fas fa-flag"></i> Greek</span>
-                    <span><i class="fas fa-language"></i> English B2 · French A2</span>
-                    <span><i class="fas fa-check-circle"></i> Military fulfilled</span>
+                    <span><i class="fas fa-flag"></i> <span data-i18n="meta.nationality">Greek</span></span>
+                    <span><i class="fas fa-language"></i> <span data-i18n="meta.languages">English B2 · French A2</span></span>
+                    <span><i class="fas fa-check-circle"></i> <span data-i18n="meta.military">Military fulfilled</span></span>
                 </div>
             </div>
         </section>
@@ -183,40 +185,40 @@
         <section id="experience" class="section section--alt">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__tag">Experience</span>
-                    <h2 class="section__title">Teaching &amp; Mentoring</h2>
-                    <p class="section__subtitle">Over 9 years of private tutoring for university and senior high-school students.</p>
+                    <span class="section__tag" data-i18n="experience.tag">Experience</span>
+                    <h2 class="section__title" data-i18n="experience.title">Teaching &amp; Mentoring</h2>
+                    <p class="section__subtitle" data-i18n="experience.subtitle">Over 9 years of private tutoring for university and senior high-school students.</p>
                 </div>
                 <div class="exp-grid">
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-ruler-combined"></i></div>
-                        <h3 class="exp-card__title">Calculus &amp; Analysis</h3>
-                        <p class="exp-card__desc">Differential &amp; Integral Calculus, Real Analysis, sequences and series.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.calculusTitle">Calculus &amp; Analysis</h3>
+                        <p class="exp-card__desc" data-i18n="experience.calculusText">Differential &amp; Integral Calculus, Real Analysis, sequences and series.</p>
                     </div>
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-square-root-variable"></i></div>
-                        <h3 class="exp-card__title">Algebra &amp; Logic</h3>
-                        <p class="exp-card__desc">Linear Algebra, Propositional Calculus, Abstract Algebra, Number Theory.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.algebraTitle">Algebra &amp; Logic</h3>
+                        <p class="exp-card__desc" data-i18n="experience.algebraText">Linear Algebra, Propositional Calculus, Abstract Algebra, Number Theory.</p>
                     </div>
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
-                        <h3 class="exp-card__title">Probability &amp; Stats</h3>
-                        <p class="exp-card__desc">Probability theory, Statistics, Distributions, Hypothesis testing.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.probabilityTitle">Probability &amp; Stats</h3>
+                        <p class="exp-card__desc" data-i18n="experience.probabilityText">Probability theory, Statistics, Distributions, Hypothesis testing.</p>
                     </div>
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-gears"></i></div>
-                        <h3 class="exp-card__title">Differential Equations</h3>
-                        <p class="exp-card__desc">ODE, PDE, applications in physics and engineering.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.equationsTitle">Differential Equations</h3>
+                        <p class="exp-card__desc" data-i18n="experience.equationsText">ODE, PDE, applications in physics and engineering.</p>
                     </div>
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fab fa-python"></i></div>
-                        <h3 class="exp-card__title">Python Programming</h3>
-                        <p class="exp-card__desc">Introduction to programming, data analysis, and scientific computing.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.pythonTitle">Python Programming</h3>
+                        <p class="exp-card__desc" data-i18n="experience.pythonText">Introduction to programming, data analysis, and scientific computing.</p>
                     </div>
                     <div class="exp-card fade-in">
                         <div class="exp-card__icon" aria-hidden="true"><i class="fas fa-compass-drafting"></i></div>
-                        <h3 class="exp-card__title">Geometry</h3>
-                        <p class="exp-card__desc">Euclidean and analytic geometry, vector spaces.</p>
+                        <h3 class="exp-card__title" data-i18n="experience.geometryTitle">Geometry</h3>
+                        <p class="exp-card__desc" data-i18n="experience.geometryText">Euclidean and analytic geometry, vector spaces.</p>
                     </div>
                 </div>
             </div>
@@ -226,9 +228,9 @@
         <section id="skills" class="section">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__tag">Skills</span>
-                    <h2 class="section__title">Tech Stack</h2>
-                    <p class="section__subtitle">Languages, tools, and platforms I work with.</p>
+                    <span class="section__tag" data-i18n="skills.tag">Skills</span>
+                    <h2 class="section__title" data-i18n="skills.title">Tech Stack</h2>
+                    <p class="section__subtitle" data-i18n="skills.subtitle">Languages, tools, and platforms I work with.</p>
                 </div>
                 <div class="skills-grid">
                     <span class="skill-tag">Python</span>
@@ -252,17 +254,17 @@
             <div class="container">
                 <div class="section__header section__header--compact">
                     <p class="activity-intro">
-                        Explore my recent public work and contribution activity on GitHub.
+                        <span data-i18n="activity.intro">Explore my recent public work and contribution activity on GitHub.</span>
                     </p>
                 </div>
                 <div class="activity-card">
                     <div class="activity-card__header">
                         <div class="activity-card__meta">
-                            <p class="activity-card__label">Public activity</p>
+                            <p class="activity-card__label" data-i18n="activity.label">Public activity</p>
                             <h3>@nzevgolisda</h3>
                         </div>
                         <a href="https://github.com/nzevgolisda" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--small">
-                            <i class="fab fa-github"></i> View profile
+                            <i class="fab fa-github"></i> <span data-i18n="activity.viewProfile">View profile</span>
                         </a>
                     </div>
                     <div class="activity-calendar">
@@ -270,15 +272,15 @@
                             <div class="contribution-graph__header">
                                 <span id="contributionTotal">22 contributions in the last year</span>
                                 <div class="contribution-graph__actions">
-                                    <button type="button">Contribution settings</button>
+                                    <button type="button" data-i18n="activity.settings">Contribution settings</button>
                                     <span class="contribution-graph__year" id="contributionYear">2026</span>
                                 </div>
                             </div>
                             <div class="contribution-graph__body">
                                 <div class="contribution-graph__days" aria-hidden="true">
-                                    <span>Mon</span>
-                                    <span>Wed</span>
-                                    <span>Fri</span>
+                                    <span data-i18n="activity.mon">Mon</span>
+                                    <span data-i18n="activity.wed">Wed</span>
+                                    <span data-i18n="activity.fri">Fri</span>
                                 </div>
                                 <div class="contribution-graph__months" id="contributionMonths" aria-hidden="true">
                                     <span style="grid-column: 1 / span 4;">Sep</span>
@@ -299,12 +301,12 @@
                                 </div>
                             </div>
                             <div class="contribution-graph__legend">
-                                <span>Less</span>
+                                <span data-i18n="activity.less">Less</span>
                                 <span class="level-0"></span>
                                 <span class="level-1"></span>
                                 <span class="level-2"></span>
                                 <span class="level-3"></span>
-                                <span>More</span>
+                                <span data-i18n="activity.more">More</span>
                             </div>
                         </div>
                     </div>
@@ -316,18 +318,18 @@
         <section id="projects" class="section section--alt">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__tag">Projects</span>
-                    <h2 class="section__title">GitHub Repositories</h2>
+                    <span class="section__tag" data-i18n="projects.tag">Projects</span>
+                    <h2 class="section__title" data-i18n="projects.title">GitHub Repositories</h2>
                     <p class="section__subtitle">
-                        Live feed from <a href="https://github.com/nzevgolisda" target="_blank" rel="noopener noreferrer">github.com/nzevgolisda</a>.
+                        <span data-i18n="projects.subtitle">Live feed from</span> <a href="https://github.com/nzevgolisda" target="_blank" rel="noopener noreferrer">github.com/nzevgolisda</a>.
                     </p>
                 </div>
                 <div id="repoGrid" class="projects-grid">
-                    <div class="loading">Loading repositories…</div>
+                    <div class="loading" data-i18n="projects.loading">Loading repositories…</div>
                 </div>
                 <div class="projects__footer">
                     <a href="https://github.com/nzevgolisda?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-                        <i class="fab fa-github"></i> View all on GitHub
+                        <i class="fab fa-github"></i> <span data-i18n="projects.viewAll">View all on GitHub</span>
                     </a>
                 </div>
             </div>
@@ -337,9 +339,9 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__tag">Contact</span>
-                    <h2 class="section__title">Let's connect</h2>
-                    <p class="section__subtitle">
+                    <span class="section__tag" data-i18n="contact.tag">Contact</span>
+                    <h2 class="section__title" data-i18n="contact.title">Let's connect</h2>
+                    <p class="section__subtitle" data-i18n="contact.subtitle">
                         I'm always open to discussing data science, backend engineering, or interesting math problems.
                     </p>
                 </div>
@@ -347,37 +349,37 @@
                     <form id="contactForm" class="contact__form" action="https://formspree.io/f/xqakjvro" method="POST">
                         <div class="contact__form-group">
                             <label>
-                                <span>Your name</span>
+                                <span data-i18n="contact.name">Your name</span>
                                 <input type="text" name="name" autocomplete="name" placeholder="Alex Morgan" required />
                             </label>
                             <label>
-                                <span>Email address</span>
+                                <span data-i18n="contact.email">Email address</span>
                                 <input type="email" name="email" autocomplete="email" placeholder="alex@example.com" required />
                             </label>
                         </div>
                         <label>
-                            <span>How can I help?</span>
-                            <textarea name="message" placeholder="Tell me a little about your project or question." rows="5" required></textarea>
+                            <span data-i18n="contact.messageLabel">How can I help?</span>
+                            <textarea name="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tell me a little about your project or question." rows="5" required></textarea>
                         </label>
                         <input type="hidden" name="subject" value="New portfolio enquiry" />
                         <div class="contact__form-actions">
                             <button type="submit" class="btn btn--primary contact__submit">
-                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Send email request
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> <span data-i18n="contact.send">Send email request</span>
                             </button>
-                            <a class="contact__email-link mailto-link" href="mailto:nzevgolisda@gmail.com?subject=Portfolio%20enquiry">Or email me directly</a>
+                            <a class="contact__email-link mailto-link" href="mailto:nzevgolisda@gmail.com?subject=Portfolio%20enquiry" data-i18n="contact.directEmail">Or email me directly</a>
                         </div>
                         <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
                         <div id="formSuccess" class="form-success" role="status" aria-live="polite">
-                            <i class="fas fa-check-circle"></i> Thanks! Your message was sent.
+                            <i class="fas fa-check-circle"></i> <span data-i18n="contact.success">Thanks! Your message was sent.</span>
                         </div>
                     </form>
                     <div class="contact__info">
-                        <p class="contact__eyebrow">Start a conversation</p>
-                        <h3>Have a problem worth solving?</h3>
-                        <p class="contact__copy">Whether you are building a data workflow, improving a backend, or need a patient mathematics tutor, I would be glad to hear what you are working on.</p>
+                        <p class="contact__eyebrow" data-i18n="contact.eyebrow">Start a conversation</p>
+                        <h3 data-i18n="contact.problem">Have a problem worth solving?</h3>
+                        <p class="contact__copy" data-i18n="contact.copy">Whether you are building a data workflow, improving a backend, or need a patient mathematics tutor, I would be glad to hear what you are working on.</p>
                         <a href="mailto:nzevgolisda@gmail.com?subject=Portfolio%20enquiry" class="mailto-link"><i class="fas fa-envelope"></i> nzevgolisda@gmail.com</a>
                         <a href="https://github.com/nzevgolisda" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> @nzevgolisda</a>
-                        <a href="cv.zevgolis-nikolaos.20260826.pdf" download><i class="fas fa-file-pdf"></i> Download CV</a>
+                        <a href="cv.zevgolis-nikolaos.20260826.pdf" download><i class="fas fa-file-pdf"></i> <span data-i18n="common.downloadCv">Download CV</span></a>
                     </div>
                 </div>
             </div>
@@ -387,7 +389,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container footer__inner">
-                <p>&copy; 2026 Nikos Zevgolis. Built with care and Python.</p>
+                <p data-i18n="footer">&copy; 2026 Nikos Zevgolis. Built with care and Python.</p>
             </div>
         </footer>
 
@@ -400,6 +402,7 @@
         <script src="js/typing.js" defer></script>
         <script src="js/nav.js" defer></script>
         <script src="js/theme.js" defer></script>
+        <script src="js/language.js" defer></script>
         <script src="js/contributions.js" defer></script>
         <script src="js/github.js?v=20260912" defer></script>
         <script src="js/contact.js" defer></script>
