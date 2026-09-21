@@ -1,43 +1,36 @@
+// Typing effect implementation for Hero section
+document.addEventListener("DOMContentLoaded", () => {
+    const typedTextElement = document.getElementById("typedText");
+    if (!typedTextElement) return;
 
-// Typing effect
-const typedElement = document.getElementById('typedText');
-const phrasesByLanguage = {
-    en: ['Math Enthusiast', 'Data Scientist', 'Backend Developer', 'Problem Solver'],
-    gr: ['Math Geek', 'Data Science', 'Backend Developer', 'Problem Solver']
-};
-let phrases = phrasesByLanguage.en;
-let phraseIndex = 0, charIndex = 0, isDeleting = false, typingSpeed = 100;
+    const words = ["Math Enthusiast", "Data Scientist", "Backend Developer"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-function typeEffect() {
-    if (!typedElement) return;
+    function typeEffect() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
 
-    const currentPhrase = phrases[phraseIndex];
-    if (isDeleting) {
-        typedElement.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-    } else {
-        typedElement.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 120;
+        let typingSpeed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            typingSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typingSpeed);
     }
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        typingSpeed = 1500;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 400;
-    }
-    setTimeout(typeEffect, typingSpeed);
-}
 
-if (typedElement) {
     typeEffect();
-    document.addEventListener('languagechange', function(event) {
-        phrases = phrasesByLanguage[event.detail.language] || phrasesByLanguage.en;
-        phraseIndex = 0;
-        charIndex = 0;
-        isDeleting = false;
-    });
-}
+});

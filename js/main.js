@@ -1,5 +1,4 @@
-
-// Main entry point – just logs
-console.log('🚀 Nikos Zevgolis – Math & Code');
-console.log('📚 Theoretical Mathematics | University of Crete');
-console.log('🐍 Python | JS | SQL | Power BI');
+// General global application initialization scripts
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Nikos Zevgolis Portfolio initialized successfully.");
+});

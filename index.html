@@ -18,9 +18,12 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/theme.css" />
+        <link rel="stylesheet" href="css/language.css" />
+        <link rel="stylesheet" href="css/translate-fix.css" />
     </head>
     <body>
         <a class="skip-link" href="#main-content">Skip to main content</a>
+        
         <!-- Navigation -->
         <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
             <div class="container navbar__inner">
@@ -33,9 +36,11 @@
                     <li><a href="#contact" class="navbar__cta" aria-label="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span class="nav-link__label" data-i18n="nav.contact">Contact</span></a></li>
                 </ul>
                 <div class="navbar__actions">
-                    <button type="button" id="languageToggle" class="language-toggle" aria-label="Switch to Greek" aria-pressed="false">
-                        <span id="languageToggleLabel">GR</span>
-                    </button>
+                    <!-- Icon-enhanced Multilingual Selector -->
+                    <div class="language-picker" aria-label="Select Language">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <div id="google_translate_element"></div>
+                    </div>
                     <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -56,7 +61,6 @@
                         <span data-i18n="hero.availability">Available for data &amp; backend projects</span>
                     </div>
                     <h1 class="hero__title">
-                        
                         Nikos Zevgolis<br />
                         <span class="hero__highlight" id="typedText" data-i18n="hero.title">Math Enthusiast</span>
                     </h1>
@@ -72,7 +76,7 @@
                     </div>
                     <div class="hero__socials">
                         <a href="https://github.com/nzevgolisda" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/nzevgolisda" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/nikos-zevgolis-a92b63221/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="mailto:nzevgolisda@gmail.com?subject=Portfolio%20enquiry" class="mailto-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
@@ -297,8 +301,6 @@
                                     <span style="grid-column: 48 / span 4;">Aug</span>
                                 </div>
                                 <div class="contribution-graph__grid" id="contributionGrid" aria-busy="true" data-source="github-contributions-api"></div>
-                                    <span class="level-0"></span><span class="level-0"></span><span class="level-0"></span><span class="level-0"></span><span class="level-0"></span><span class="level-0"></span><span class="level-0"></span>
-                                </div>
                             </div>
                             <div class="contribution-graph__legend">
                                 <span data-i18n="activity.less">Less</span>
@@ -398,11 +400,13 @@
             <i class="fas fa-arrow-up"></i>
         </button>
 
-        <!-- JavaScript modules -->
+        <!-- External Scripts -->
+        <script type="text/javascript" src="js/translate-init.js"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript" src="js/element.js" defer></script>
         <script src="js/typing.js" defer></script>
         <script src="js/nav.js" defer></script>
         <script src="js/theme.js" defer></script>
-        <script src="js/language.js" defer></script>
         <script src="js/contributions.js" defer></script>
         <script src="js/github.js?v=20260912" defer></script>
         <script src="js/contact.js" defer></script>

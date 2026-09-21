@@ -1,38 +1,18 @@
+// Scroll to top button visibility and action
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollTopBtn = document.getElementById("scrollTop");
 
-// Scroll to top button
-const scrollBtn = document.getElementById('scrollTop');
-const navbar = document.getElementById('navbar');
-let navbarTimer;
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add("visible");
+        } else {
+            scrollTopBtn.classList.remove("visible");
+        }
+    });
 
-function updateNavbarVisibility() {
-    if (!navbar) return;
-
-    const currentScrollY = window.scrollY;
-
-    clearTimeout(navbarTimer);
-
-    if (currentScrollY <= 0) {
-        navbar.classList.remove('navbar--hidden');
-        return;
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
-
-    navbar.classList.add('navbar--hidden');
-    navbarTimer = setTimeout(function() {
-        navbar.classList.remove('navbar--hidden');
-    }, 180);
-}
-
-window.addEventListener('scroll', updateNavbarVisibility, { passive: true });
-updateNavbarVisibility();
-
-if (scrollBtn) {
-    window.addEventListener('scroll', function() {
-        scrollBtn.classList.toggle('visible', window.scrollY > 400);
-    });
-
-    scrollBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-
+});

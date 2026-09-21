@@ -1,15 +1,23 @@
-(function() {
-    const grid = document.getElementById('contributionGrid');
-    const graph = grid ? grid.closest('.contribution-graph') : null;
-    const weekCount = 53;
-
+// GitHub Contributions Graph placeholder dynamic script
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("contributionGrid");
     if (!grid) return;
-
-    if (graph) {
-        graph.style.setProperty('--week-count', weekCount);
+    
+    grid.innerHTML = "";
+    // Generate sample grid columns for visual representation
+    for (let i = 0; i < 52; i++) {
+        const col = document.createElement("div");
+        col.style.display = "flex";
+        col.style.flexDirection = "column";
+        col.style.gap = "3px";
+        for (let j = 0; j < 7; j++) {
+            const cell = document.createElement("span");
+            cell.className = `level-${Math.floor(Math.random() * 4)}`;
+            cell.style.width = "10px";
+            cell.style.height = "10px";
+            cell.style.borderRadius = "2px";
+            col.appendChild(cell);
+        }
+        grid.appendChild(col);
     }
-
-    grid.innerHTML = Array.from({ length: weekCount * 7 }, function() {
-        return '<span class="level-0"></span>';
-    }).join('');
-})();
+});

@@ -1,33 +1,13 @@
+// Navigation Hamburger and Responsive Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
 
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-
-if (navToggle && navLinks) {
-    function closeNavigation() {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('open');
-        document.body.classList.remove('nav-menu-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Open navigation');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+            const expanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", !expanded);
+            navLinks.classList.toggle("active");
+        });
     }
-
-    navToggle.addEventListener('click', function() {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggle.classList.toggle('open', isOpen);
-        document.body.classList.toggle('nav-menu-open', isOpen);
-        navToggle.setAttribute('aria-expanded', String(isOpen));
-        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    });
-
-    document.querySelectorAll('.navbar__links a').forEach(function(link) {
-        link.addEventListener('click', closeNavigation);
-    });
-
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeNavigation();
-            navToggle.focus();
-        }
-    });
-}
+});

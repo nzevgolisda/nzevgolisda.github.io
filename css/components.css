@@ -489,3 +489,15 @@
     width: 18px;
     margin-right: 6px;
 }
+#typedText {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: 4.2em;
+    line-height: 1.4;
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.25rem;
+    overflow: hidden;
+    white-space: normal;
+    word-break: break-word;
+}
