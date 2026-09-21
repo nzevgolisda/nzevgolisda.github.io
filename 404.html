@@ -1,57 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="noindex" />
-        <title>Page not found | Nikos Zevgolis</title>
+        <title>Page not found · Nikos Zevgolis</title>
+        <meta name="theme-color" content="#0b0d10" />
+
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0d10'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='18' font-weight='bold' fill='%23f2b544' text-anchor='middle'%3ENZ%3C/text%3E%3C/svg%3E" />
+
+        <script>
+            (function () {
+                try {
+                    var s = localStorage.getItem('nz-theme');
+                    var t = s === 'light' || s === 'dark'
+                        ? s
+                        : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {}
+            })();
+        </script>
+
         <style>
-            :root {
+            :root,
+            html[data-theme='dark'] {
                 color-scheme: dark;
-                font-family: Georgia, 'Times New Roman', serif;
-                background: #10151f;
-                color: #f5f1e8;
+                --bg: #0b0d10;
+                --heading: #f3f5f8;
+                --text: #c8d0db;
+                --accent: #f2b544;
+                --accent-teal: #7ed6c5;
+                --border: #232a33;
+            }
+
+            html[data-theme='light'] {
+                color-scheme: light;
+                --bg: #fbfaf7;
+                --heading: #0f1216;
+                --text: #3d4450;
+                --accent: #b8791a;
+                --accent-teal: #1f8a76;
+                --border: #e2ded5;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                min-height: 100vh;
             }
 
             body {
                 display: grid;
-                min-height: 100vh;
-                margin: 0;
                 place-items: center;
+                padding: 2rem;
+                background: var(--bg);
+                color: var(--text);
+                font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
                 text-align: center;
             }
 
             main {
                 max-width: 34rem;
-                padding: 2rem;
+            }
+
+            .brand {
+                display: inline-block;
+                margin-bottom: 2rem;
+                font-size: 1.35rem;
+                font-weight: 800;
+                letter-spacing: -0.03em;
+                color: var(--heading);
+                text-decoration: none;
+            }
+
+            .brand span {
+                color: var(--accent);
             }
 
             h1 {
                 margin: 0 0 0.75rem;
-                font-size: clamp(3rem, 12vw, 7rem);
+                font-family: Georgia, 'Times New Roman', serif;
+                font-size: clamp(4rem, 15vw, 8rem);
                 line-height: 1;
-                color: #f2b544;
+                color: var(--accent);
+                letter-spacing: -0.04em;
             }
 
             p {
-                margin: 0 0 1.5rem;
-                color: #c7cfdb;
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
+                margin: 0 0 1.75rem;
+                font-size: 1.05rem;
+                line-height: 1.65;
+                color: var(--text);
             }
 
-            a {
-                color: #7ed6c5;
-                font-family: Arial, sans-serif;
-                font-weight: 700;
+            .actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                justify-content: center;
+            }
+
+            a.btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.55rem;
+                padding: 0.85rem 1.5rem;
+                font-size: 0.95rem;
+                font-weight: 600;
+                border-radius: 10px;
+                text-decoration: none;
+                transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            }
+
+            a.btn--primary {
+                background: var(--accent);
+                color: #0b0d10;
+            }
+
+            a.btn--primary:hover {
+                background: var(--accent-teal);
+                color: #0b0d10;
+            }
+
+            a.btn--secondary {
+                background: transparent;
+                color: var(--heading);
+                border: 1px solid var(--border);
+            }
+
+            a.btn--secondary:hover {
+                border-color: var(--accent);
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                a.btn {
+                    transition: none;
+                }
             }
         </style>
     </head>
     <body>
         <main>
+            <a href="/" class="brand">Nikos<span>.</span></a>
             <h1>404</h1>
             <p>This page does not exist, but the portfolio is still here.</p>
-            <a href="/">Return to the portfolio</a>
+            <div class="actions">
+                <a href="/" class="btn btn--primary">Go to Portfolio</a>
+                <a href="/#contact" class="btn btn--secondary">Contact Me</a>
+            </div>
         </main>
     </body>
 </html>

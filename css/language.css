@@ -1,39 +1,62 @@
-
 .language-picker {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: var(--bg-surface, rgba(30, 41, 59, 0.6));
-    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
-    padding: 3px 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    gap: 0.5rem;
+    height: 42px;
+    padding: 0 0.9rem 0 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
-.language-picker i {
-    color: var(--text-muted, #94a3b8);
-    font-size: 14px;
+
+.language-picker:hover,
+.language-picker:focus-within {
+    border-color: var(--accent);
 }
-.navbar__actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+
+.language-picker__globe {
+    font-size: 0.85rem;
+    color: var(--accent);
+    pointer-events: none;
 }
-.goog-te-combo {
+
+.language-picker__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 1.1rem 0 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--heading);
     background: transparent;
-    color: var(--text-main, #f8fafc);
-    border: none;
-    padding: 4px 6px;
-    font-size: 13px;
-    outline: none;
+    border: 0;
     cursor: pointer;
+    outline: none;
 }
-.goog-te-combo option {
-    background-color: #1e293b;
-    color: #f8fafc;
+
+.language-picker__select option {
+    background: var(--surface);
+    color: var(--heading);
 }
-.goog-te-banner-frame { display: none !important; }
-body { top: 0 !important; }
-.goog-te-gadget { font-size: 0 !important; color: transparent !important; }
-.goog-te-gadget span { display: none !important; }
-#goog-gt-tt, .goog-tooltip { display: none !important; }
-.goog-text-highlight { background-color: transparent !important; border: none !important; }
+
+.language-picker__caret {
+    position: absolute;
+    right: 0.7rem;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+@media (max-width: 480px) {
+    .language-picker {
+        height: 38px;
+        padding: 0 0.75rem 0 0.6rem;
+    }
+
+    .language-picker__select {
+        font-size: 0.78rem;
+    }
+}
