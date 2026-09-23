@@ -41,11 +41,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="css/base.css?v=20260922" />
-        <link rel="stylesheet" href="css/layout.css?v=20260922" />
-        <link rel="stylesheet" href="css/components.css?v=20260922" />
-        <link rel="stylesheet" href="css/theme.css?v=20260922" />
-        <link rel="stylesheet" href="css/language.css?v=20260922" />
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/theme.css" />
+        <link rel="stylesheet" href="css/language.css" />
     </head>
     <body>
         <a class="skip-link" href="#main-content" data-i18n="common.skip">Skip to main content</a>
@@ -447,15 +447,15 @@
             <i class="fas fa-arrow-up" aria-hidden="true"></i>
         </button>
 
-        <!-- Scripts (order matters: i18n first) -->
-        <script src="js/i18n.js?v=20260922" defer></script>
-        <script src="js/theme.js?v=20260922" defer></script>
-        <script src="js/typing.js?v=20260922" defer></script>
-        <script src="js/nav.js?v=20260922" defer></script>
-        <script src="js/contributions.js?v=20260922" defer></script>
-        <script src="js/github.js?v=20260922" defer></script>
-        <script src="js/contact.js?v=20260922" defer></script>
-        <script src="js/scroll.js?v=20260922" defer></script>
-        <script src="js/main.js?v=20260922" defer></script>
+
+        <!-- Αόρατο στοιχείο για το Google Translate -->
+        <div id="google_translate_element" style="display:none;"></div>
+
+        <!-- Φόρτωση των Core Scripts -->
+        <script src="js/main.bundle.js"></script>
+        <script src="js/services.bundle.js"></script>
+
+        <!-- Φόρτωση Google Translate API -->
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 </html>
