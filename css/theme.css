@@ -34,6 +34,8 @@ html[data-theme='dark'] {
     --contrib-2: #006d32;
     --contrib-3: #26a641;
     --contrib-4: #39d353;
+
+    --danger: #ff7b72;
 }
 
 html[data-theme='light'] {
@@ -71,6 +73,8 @@ html[data-theme='light'] {
     --contrib-2: #40c463;
     --contrib-3: #30a14e;
     --contrib-4: #216e39;
+
+    --danger: #c0392b;
 }
 
 /* -------- Theme toggle button -------- */
@@ -96,10 +100,7 @@ html[data-theme='light'] {
     transform: translateY(-1px);
 }
 
-html[data-theme='dark'] .theme-toggle .fa-moon {
-    color: var(--accent);
-}
-
+html[data-theme='dark'] .theme-toggle .fa-moon,
 html[data-theme='light'] .theme-toggle .fa-sun {
     color: var(--accent);
 }

@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
         <title>Nikos Zevgolis · Data &amp; Backend Developer</title>
         <meta name="description" content="Portfolio of Nikos Zevgolis — Mathematics graduate, aspiring Data Scientist &amp; Backend Developer." />
         <meta name="author" content="Nikos Zevgolis" />
@@ -46,6 +47,7 @@
         <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/theme.css" />
         <link rel="stylesheet" href="css/language.css" />
+        <link rel="stylesheet" href="css/translate-fix.css" />
     </head>
     <body>
         <a class="skip-link" href="#main-content" data-i18n="common.skip">Skip to main content</a>
@@ -101,7 +103,7 @@
 
                         <h1 class="hero__title">
                             Nikos Zevgolis<br />
-                            <span class="hero__highlight" id="typedText">Math Enthusiast</span><span class="hero__caret" id="typedCaret" aria-hidden="true"></span>
+                            <span class="hero__highlight" data-i18n="hero.role">Math Enthusiast</span><span class="hero__caret" aria-hidden="true"></span>
                         </h1>
 
                         <p class="hero__subtitle" data-i18n="hero.subtitle">
@@ -203,7 +205,6 @@
                     <div class="about__signature">
                         <span class="about__signature-label" data-i18n="about.principleLabel">Working principle</span>
                         <p data-i18n="about.principle">Make the complex clear, then make the solution useful.</p>
-                        <!--<span class="about__signature-mark">NZ / 2026</span>-->
                     </div>
 
                     <div class="stats-grid">
@@ -447,15 +448,14 @@
             <i class="fas fa-arrow-up" aria-hidden="true"></i>
         </button>
 
+        <!-- Hidden anchor for the Google Translate widget -->
+        <div id="google_translate_element" aria-hidden="true"></div>
 
-        <!-- Αόρατο στοιχείο για το Google Translate -->
-        <div id="google_translate_element" style="display:none;"></div>
-
-        <!-- Φόρτωση των Core Scripts -->
+        <!-- Core Scripts -->
         <script src="js/main.bundle.js"></script>
         <script src="js/services.bundle.js"></script>
 
-        <!-- Φόρτωση Google Translate API -->
+        <!-- Google Translate API -->
         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     </body>
 </html>

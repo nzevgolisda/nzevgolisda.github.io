@@ -88,11 +88,10 @@ strong {
     font-weight: 600;
 }
 
-/* Focus ring */
+/* Focus ring — kept narrow so it doesn't reshape components */
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 4px;
 }
 
 /* Skip link */

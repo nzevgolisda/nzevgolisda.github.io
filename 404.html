@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
         <meta name="robots" content="noindex" />
         <title>Page not found · Nikos Zevgolis</title>
         <meta name="theme-color" content="#0b0d10" />
@@ -43,15 +44,9 @@
                 --border: #e2ded5;
             }
 
-            * {
-                box-sizing: border-box;
-            }
+            * { box-sizing: border-box; }
 
-            html,
-            body {
-                margin: 0;
-                min-height: 100vh;
-            }
+            html, body { margin: 0; min-height: 100vh; }
 
             body {
                 display: grid;
@@ -63,9 +58,7 @@
                 text-align: center;
             }
 
-            main {
-                max-width: 34rem;
-            }
+            main { max-width: 34rem; }
 
             .brand {
                 display: inline-block;
@@ -77,9 +70,7 @@
                 text-decoration: none;
             }
 
-            .brand span {
-                color: var(--accent);
-            }
+            .brand span { color: var(--accent); }
 
             h1 {
                 margin: 0 0 0.75rem;
@@ -116,30 +107,18 @@
                 transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
             }
 
-            a.btn--primary {
-                background: var(--accent);
-                color: #0b0d10;
-            }
-
-            a.btn--primary:hover {
-                background: var(--accent-teal);
-                color: #0b0d10;
-            }
+            a.btn--primary { background: var(--accent); color: #0b0d10; }
+            a.btn--primary:hover { background: var(--accent-teal); color: #0b0d10; }
 
             a.btn--secondary {
                 background: transparent;
                 color: var(--heading);
                 border: 1px solid var(--border);
             }
-
-            a.btn--secondary:hover {
-                border-color: var(--accent);
-            }
+            a.btn--secondary:hover { border-color: var(--accent); }
 
             @media (prefers-reduced-motion: reduce) {
-                a.btn {
-                    transition: none;
-                }
+                a.btn { transition: none; }
             }
         </style>
     </head>
